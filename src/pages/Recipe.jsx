@@ -26,7 +26,10 @@ function Recipe() {
       <div>
         <h2>{details.title}</h2>
         <img src={details.image} alt="" style={{ width: "25rem" }}></img>
+        <hr></hr>
+        <h4 dangerouslySetInnerHTML={{ __html: details.summary }}></h4>
       </div>
+
       <Info>
         <ButtonContainer>
           <Button
@@ -44,8 +47,7 @@ function Recipe() {
         </ButtonContainer>
         {activeTab === "instructions" && (
           <div>
-            <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
-            <h3 dangerouslySetInnerHTML={{ __html: details.instructions }}></h3>
+            <p dangerouslySetInnerHTML={{ __html: details.instructions }}></p>
           </div>
         )}
         {activeTab === "ingredients" && (
@@ -65,27 +67,38 @@ const DetailWraper = styled.div`
   margin-bottom: 5rem;
   display: flex;
 
-  h3 {
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  h4 {
+    margin-top: 2rem;
     font-size: 0.8rem;
     line-height: 1.5rem;
+  }
+
+  p {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+  }
+
+  hr {
+    margin-top: 2rem;
+  }
+
+  li {
+    font-size: 1.1rem;
+    line-height: 2rem;
+  }
+
+  ul {
+    margin-top: 2rem;
   }
 
   .active {
     background: linear-gradient(35deg, #494949, #313131);
     color: white;
-  }
-
-  h2 {
-    margin-bottom: 2rem;
-  }
-
-  li {
-    font-size: 1.2rem;
-    line-height: 2.5rem;
-  }
-
-  ul {
-    margin-top: 2rem;
   }
 `;
 

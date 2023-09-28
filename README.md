@@ -3,5 +3,3 @@ This is a fullstack web application for browsing recipes built with React, Node.
 
 ### Deployed via Netlify: 
 Web page link: https://dish-discover.netlify.app/
-
-![Home Page](dishdiscover_img1.png)
